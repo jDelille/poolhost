@@ -1,0 +1,291 @@
+.header {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 2px 2px 1px rgba(0,0,0,.2);
+    position: relative;
+    /* background-color: ; */
+    
+    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 3%;
+}
+
+.home-link {
+    color: white;
+    font-size: 22px;
+}
+
+.home-link:hover {
+    text-decoration: none;
+}
+.brand {
+    font-size: 14px;
+    color: white;
+    
+}
+
+.home-link {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 1em;
+}
+
+/* li a {
+    text-decoration: none;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+} */
+
+
+
+
+
+.logout-btn {
+    margin-left: auto;
+    position: relative;
+    top: 60%;
+    font-weight: 16px;
+    border-radius: 20px;
+}
+
+.menu {
+    margin-left: auto;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu > path {
+    stroke: white;
+}
+
+.clear-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 10px 30px
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
+
+.toggler {
+   width: 100px;
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   
+   border: 1px solid white
+}
+
+.current-user-nav {
+    position: absolute;
+    right: 7%;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-box {
+    width: 340px;
+    height: 300px;
+    position: absolute;
+    right: 4.5%;
+    top: 80px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    z-index: 9999;
+    border-radius: 10px;
+
+}
+
+.menu-box button {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+    
+
+}
+
+.nav-links-mobile {
+    padding: 0;
+}
+
+.menu-signin {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-login {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.darkModeBtn {
+    position: absolute;
+    bottom: 10px;
+}
+
+.current-user {
+    color: white;
+    font-size: 12px;
+    position: absolute;
+}
+
+.menu-logout {
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+
+}
+
+.hide {
+ 
+}
+
+.hide-link {
+    visibility: hidden;
+    width: 340px;
+    height: 300px;
+    position: absolute;
+    right: 4.5%;
+    top: 80px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: #013369;
+    z-index: 9999;
+    border-radius: 10px;
+
+}
+
+.nav-links-mobile {
+    display: none;
+}
+
+
+
+.update-profile-btn {
+    text-decoration: none;
+    position: absolute;
+    bottom: 60px;
+}
+
+
+
+
+.picks-dropdown {
+    width: 257px;
+    height: 100px;
+    background-color: #013369;
+    margin-left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    
+}
+
+.site-logo {
+    max-width: 70px;
+}
+
+a {
+    
+}
+
+.toggler-label-dark {
+    font-size: 22px;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    top: -16px;
+    left: 12px;
+    color: white;
+}
+.toggler-label-light {
+    font-size: 25px;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    right: 11px;
+    color: yellow;
+}
+
+
+.toggler-icon {
+    width: 70px;
+    height: 16px;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.switch {
+    background-color: lightseagreen;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    left: -7px;
+    z-index: 999;
+}
+
+
+@media screen and (max-width: 480px) {
+    .nav-links {
+      display: none;
+    }
+    .nav-links-mobile {
+        display: flex;
+        margin-top: 40px;
+        flex-direction: column;
+        height: auto;
+        gap: 1em;
+        justify-content: space-evenly;
+    }
+    .current-user {
+        position: absolute;
+        left: 10px;
+    }
+
+    .current-user-nav {
+        margin-right: 20px;
+    }
+
+    .menu-box {
+        width: 100%;
+        height: 50vh;
+        position: absolute;
+        right: -4.5%;
+        border-radius: 0;
+    }
+  }

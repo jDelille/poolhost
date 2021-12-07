@@ -1,0 +1,147 @@
+/* LEADERBOARD BOX */
+.leaderboard {
+ height: 100%;
+ width: 20%;
+ border-right: 1px solid darkgray;
+ padding: 0 10px;
+ 
+}
+
+.leaderboard-title {
+ text-align: center;
+ font-size: 16px;
+ padding-top: 12px;
+}
+
+.avatar {
+ max-width: 100%;
+ height: 100%;
+}
+
+.top-three {
+ height: 15%;
+ display: flex;
+ justify-content: center;
+ padding-top: 25px;
+ gap: 0.5em;
+ align-items: center;
+ border-bottom: 2px solid lightgray;
+}
+
+.third-place,
+.first-place,
+.second-place {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+ background-color: lightblue;
+ border: 4px solid lightgray;
+ display: flex;
+ position: relative;
+ align-items: center;
+ justify-content: center;
+}
+
+.first-place {
+ width: 70px;
+ height: 70px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+
+}
+
+.second-place {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+}
+
+.third-place {
+
+}
+
+.crown {
+ max-width: 40px;
+ position: absolute;
+ bottom: 70px;
+
+}
+
+.third-place,
+.second-place {
+ position: relative;
+ top: 10px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.third-place p,
+.second-place p {
+ position: absolute;
+ bottom: 50px;
+}
+
+.losers {
+ height: 55%;
+ display: flex;
+ flex-direction: column;
+}
+
+.position {
+ width: 92%;
+ height: 10%;
+ align-items: center;
+ display: flex;
+ align-items: center;
+ border-bottom: 2px solid lightgray;
+}
+
+.leaderboard-losers {
+    height: 100%;
+    display: flex;
+    width: 100%;
+}
+
+.position-boxes {
+    width: 100%;
+}
+
+.loser-avatar {
+    margin-right: 6px;
+}
+
+.position-num {
+    position: relative;
+    height: 100%;
+    width: 10%;
+
+}
+
+.position-num h1 {
+    font-size: 16px;
+    height: 10%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid lightgray;
+
+}
+
+.user-position {
+ font-size: 12px;
+ margin: 0;
+}
+
+@media screen and (max-width: 780px) {
+
+ .leaderboard {
+     background-color: yellow;
+     width: 100%;
+     display: none;
+    }
+}

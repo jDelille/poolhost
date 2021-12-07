@@ -1,0 +1,150 @@
+.gamebar {
+    display: flex;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    height: 85px;
+    align-items: center;
+    color: #202124;
+    background-color: #F9FAFD;
+    overflow-y: hidden;
+
+}
+
+@-moz-document url-prefix() { /* Disable scrollbar Firefox */
+    .gamebar {
+      scrollbar-width: none;
+    }
+    .gamebar-container {
+        scrollbar-width: none;
+      }
+  }
+
+.gamebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .game-time {
+
+  }
+
+.game-box {
+    min-width: 121.25px;
+    height: 90px;
+    border-right: 1px solid #313131;
+    position: relative;
+    padding: 2px 10px;
+    overflow-y: hidden;
+}
+
+.time {
+    position: relative;
+    bottom: 27px;
+    font-size: 10px;
+    
+    display: flex;
+    
+   
+}
+
+.ht,
+.rt {
+    width: 100%;
+    display: flex;
+    height: 50%;
+    align-items: center;
+}
+
+.rt {
+    position: relative;
+    bottom: 10px;
+}
+
+.ht-logo,
+.rt-logo {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-initials {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.fav-underdog {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.badge {
+    color: rgb(49, 58, 70);
+    background-color: rgb(255, 188, 0);
+    padding: 2px;
+    height: 10px;
+    border-radius: 2px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 1px;
+    left: 4px;
+}
+
+.badge h3 {
+    font-size: 8px;
+}
+
+
+.record {
+    width: 40%;
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+img {
+    max-width: 28px;
+}
+
+.game-box h1 {
+    font-size: 10px;
+}
+
+.monkey {
+    font-size: 4em;
+    color: red;
+}
+
+h1 {
+    margin: 0;
+}
+
+.news-description {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.news-description p {
+    font-size: 12px;
+}
+
+.game-time {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+

@@ -1,0 +1,332 @@
+.picks-page {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.picks-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    padding-top: 5%;
+
+}
+
+.pick-content {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    display: flex;
+    position: relative;
+    
+}
+
+.left-col {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: red;
+
+}
+
+
+.space {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 10px;
+    border-right: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+}
+
+.space h6 {
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+}
+
+.ht-picks::-webkit-scrollbar {
+    display: none;
+}
+
+.rt-picks::-webkit-scrollbar {
+    display: none;
+}
+
+
+.colors-away {
+    
+}
+
+
+.color {
+   
+}
+
+.away-color {
+  
+}
+
+.away-color2 {
+   
+}
+
+.color2 {
+    /* height: 100%;
+    width: 6%;
+    position: relative;
+    right: 6.5%;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    z-index: 4; */
+}
+
+.pick-logo {
+    border: 1px solid black;
+    display: flex;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.select-team {
+    border-top: 4px solid black;
+    width: 100%;
+    position: relative;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.away-btn {
+    position: absolute;
+    right: 0;
+}
+
+.jack {
+    width: 100%;
+    height: 90%;
+}
+
+
+
+.game-details {
+    border: 1px solid blue;
+    width: 20%;
+}
+
+
+
+.pick-logo img {
+    max-width: 50px;
+}
+
+.select-team button {
+    padding: 10px 30px;
+    cursor: pointer;
+    width: 82%;
+    display: block;
+    
+    height: 80%;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 2px solid lightgray;
+}
+
+.select-btn:hover {
+    background-color: #28A745;
+    color: white;
+}
+
+.team-logo-picks {
+    max-width: 76px;
+}
+
+.hometeam,
+.awayteam {
+    font-size: 24px;
+}
+
+
+.selected {
+    background: green;
+}
+
+.pick-box {
+    position: absolute;
+    top: 20px;
+    margin-bottom: 40px;
+    height: 100px;
+    width: 45%;
+}
+
+.game-row {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,.2);
+    background-color: #f8f8f8;
+    
+
+}
+
+.top-bar {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #f8f8f8;
+    
+}
+
+.bottom {
+    height: 75%;
+    position: relative;
+    top: 12.5%;
+    display: flex;
+}
+
+.home-news,
+.away-news {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.your-picks-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    height: 100px;
+    border: 1px solid lightgray;
+    margin: 0 auto;
+}
+
+.vegas-odds {
+    display: flex;
+    width: 80%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vegas-odds h1 {
+    font-size: 16px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.away-odds {
+    display: flex;
+    width: 80%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.away-odds h1 {
+    font-size: 16px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+
+/* @media screen and (max-width: 780px) {
+
+    .left-col {
+        display: flex;
+    }
+
+    .pick-box {
+        width: 85%;
+    }
+
+
+    .picks-container {
+        padding-top: 0;
+    }
+
+    .colors {
+        width: 100%;
+        position: relative;
+        right: 5%;
+    }
+
+    .away-color {
+        position: absolute;
+        right: -10%;
+    }
+
+    .away-color2{
+        position: absolute;
+        right: 49%;
+    }
+
+    .top-bar {
+        height: 13vh;
+    }
+
+    .bottom {
+        position: absolute;
+        top: 13%;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .bottom button {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .jack {
+        height: 70%;
+    }
+
+    .ht-logo,
+    .rt-logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .awayteam,
+    .hometeam {
+        position: absolute;
+        bottom: 18px;
+    }
+
+    .game-pick {
+        position: absolute;
+        top: 10px;
+        z-index: 1;
+    }
+
+
+
+    
+} */

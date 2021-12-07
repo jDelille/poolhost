@@ -1,0 +1,91 @@
+.odds-container {
+ 
+ width: 100%;
+ position: relative;
+ display: flex;
+ flex-wrap: wrap;
+ padding: 2% 0;
+}
+
+.odds-game-box {
+ width: 40%;
+ height: 100px;
+ margin: 0 auto;
+ position: relative;
+ border: 2px solid lightgray;
+ margin-bottom: 20px;
+}
+
+.team-odds {
+ width: 20%;
+ height: 100%;
+ display: flex;
+ align-items: center;
+ 
+}
+
+.team-odds img {
+ max-width: 30px;
+}
+
+.odds-name {
+ margin-right: 10px;
+}
+
+.name-logo {
+ width: 100%;
+ display: flex;
+ align-items: center;
+}
+
+.ht-odds {
+ border-bottom: 1px solid lightgray;
+}
+
+.ht-odds,
+.rt-odds {
+ width: 100%;
+ height: 50%;
+ display: flex;
+ align-items: center;
+}
+
+.ht-odds h1,
+.rt-odds h1 {
+ font-size: 14px;
+}
+
+
+
+.odds {
+ width: 80%;
+ height: 100%;
+ padding: 0 5px;
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+}
+
+.odds h1 {
+ width: 20%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 60%;
+ border: 2px solid dodgerblue;
+ color: dodgerblue;
+ border-radius: 4px;
+}
+
+
+@media screen and (max-width: 780px) {
+
+ .odds-container {
+  display: flex;
+  flex-direction: column;
+ }
+ .odds-game-box {
+  width: 80%;
+  margin-bottom: 20px;
+ }
+}

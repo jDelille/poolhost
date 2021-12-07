@@ -1,0 +1,42 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  font-family: 'IBM Plex Sans', sans-serif;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+
+
+.gamebar-container {
+  width: auto;
+  overflow-x: scroll;
+}
+
+.gamebar-container::-webkit-scrollbar {
+  display: none;
+}
+
+.dashboard {
+  background-color: #013369;
+}
+
+.monkey {
+  color: white;
+}
+
+.news-section {
+  padding: 0 7%;
+}
+
+
+
+@media screen and (max-width: 780px) {
+
+  .news-section {
+    padding: 0
+  }
+     
+  }
