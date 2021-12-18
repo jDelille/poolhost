@@ -1,5 +1,6 @@
 const express = require('express')
 const axios = require('axios')
+const path = require('path')
 
 const app = express()
 
@@ -9,9 +10,12 @@ const app = express()
 
 app.use(express.static(__dirname + '/client'));
 
- app.get('/', function(request, response) {
- response.send('Hello World!');
- });
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '/client/dist')))
+    app.get('*', (req,res) => {
+      res.sendFile(path.join(__dirname, '/client/dist', 'index.html'))
+    })
+  }
 
 
 //ESPN API
