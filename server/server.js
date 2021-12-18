@@ -7,7 +7,7 @@ const app = express()
 // nfl news api:
 // 'https://api.nflpickwatch.com/v1/nfl/news'
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/client'));
 
  app.get('/', function(request, response) {
  response.send('Hello World!');
