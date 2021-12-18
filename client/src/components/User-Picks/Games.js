@@ -21,6 +21,8 @@ let games = data[counter]
 
 let filteredGames = []
 
+console.log(counter)
+
 filteredGames.push(games)
 
  return (

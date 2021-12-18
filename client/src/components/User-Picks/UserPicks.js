@@ -66,9 +66,13 @@ function UserPicks() {
 
     if(counter < 0) {
       counter = 0
-    } else if(counter > 13) {
-      setEndOfPicks(true)
+    } else if(counter > 15) {
+      counter = 15
+      
     }
+
+    console.log(counter)
+
 
 
   // add useEffect to avoid infinite loop
@@ -81,7 +85,7 @@ function UserPicks() {
     <>
       {/* <button
         onClick={clearPicks()}> Clear Picks </button> */}
-       {endOfPicks ? <h1>hey</h1> : <MakePicks setPick={setPick} counter={counter} setCounter={setCounter} addPicks={addPicks} />}
+       {endOfPicks ? <h1>hey</h1> : <MakePicks setPick={setPick} counter={counter} setCounter={setCounter} addPicks={addPicks} endOfPicks={endOfPicks} setEndOfPicks={setEndOfPicks} />}
 
     </>
   )

@@ -21,11 +21,9 @@ import {BsFillSunFill} from 'react-icons/bs'
 export default function Header() {
 
     const { currentUser, logout } = useAuth();
-
     const [error, setError] = useState('')
     const [toggleMenu, setToggleMenu] = useState(false)
     const history = useHistory()
-    const [darkMode, setDarkMode] = useState(false)
     const [toggler, setToggler] = useState(false)
 
     const [signedIn, setSignedIn] = useState([])
