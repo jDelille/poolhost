@@ -85,36 +85,11 @@ export default function Dashboard() {
                     <Link to="/Signup" className={currentUser ? 'hide-link' : "menu-signin"}>Sign Up</Link>
                     <Link to="/login" className={currentUser ? 'hide-link' : "menu-login"}>Log In</Link>
                 </div>
-                <div className="view-more-container">
-                    <h1> Learn More </h1>
-                    <AiOutlineDown className="down-arrow"/>
-                </div>
+
+                
                 
             </div>
-            <section className="website-info">
-            <div className="info-box-container">
-                <div className="info-box">
-                    <Check />
-                    <h1> Create an account </h1>
-                    <p> Sign up with your email to get started. </p>
-                </div>
-                <div className="info-box">
-                    <Write />
-                    <h1> Make Picks </h1>
-                    <p>  Make your picks each week. </p>
-                </div>
-                <div className="info-box">
-                    <RiveIcons />
-                    <h1> Compete </h1>
-                    <p>  Compete for a spot on the leaderboard.  </p>
-                </div>
-            </div>
-
-            <div className="get-started-container">
-            <Link to="/signup" className="link member-link"> Get Started </Link>
-            </div>
-                    
-            </section>
+         
         </div>
         </>
     )

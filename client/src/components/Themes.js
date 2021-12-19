@@ -82,6 +82,11 @@ export const GlobalStyles = createGlobalStyle`
   color: ${(props) => props.theme.navboxFont};
  }
 
+ .menu-login {
+  color: ${(props) => props.theme.navboxFont};
+
+ }
+
  .expert-labels-container {
   background-color: ${(props) => props.theme.dashboard};
   color: ${(props) => props.theme.font};

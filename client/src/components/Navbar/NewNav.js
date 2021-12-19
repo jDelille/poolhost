@@ -47,7 +47,7 @@ export default function Header() {
 
 
     const toggleSwitch = () => {
-        toggler ? gsap.to(".switch", { x: 50, duration: 0.5}) : gsap.from(".switch", { x: 50, duration: 0.5})
+        toggler ? gsap.to(".switch", { x: 54, duration: 0.5}) : gsap.from(".switch", { x: 54, duration: 0.5})
         
     }
 
