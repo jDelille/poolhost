@@ -41,8 +41,8 @@ export default function App() {
             <PrivateRoute exact path='/picks' component={UserPicks} />
             <Route path='/signup' component={Signup} />
             <Route path='/login' component={Login} />
-            <Route path='/expert-picks' component={Expert} />
-            <Route path='/chat' component={Chat} />d
+            <PrivateRoute path='/expert-picks' component={Expert} />
+            <PrivateRoute path='/chat' component={Chat} />d
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path="/update-profile" component={UpdateProfile} />
           </Switch>
