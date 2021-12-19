@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/public'))
+    app.use(express.static('client/build'))
 }
 
 
