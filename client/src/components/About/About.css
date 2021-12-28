@@ -1,0 +1,52 @@
+.about-page {
+ padding: 0 10%;
+}
+
+.about-content {
+ padding: 20px 0;
+}
+
+.about-title {
+ text-align: center;
+ padding-top: 20px;
+}
+
+
+.about-text{
+ text-align: left;
+ width: 100%;
+ margin: 0 auto;
+ font-size: 18px;
+ margin-top: 40px;
+}
+
+.updates-container {
+ width: 100%;
+ text-align: left;
+ border-top: 1px solid lightgray;
+
+ height: 50%;
+ position: relative;
+ border-bottom: 1px solid lightgray;
+}
+
+.updates-list {
+ list-style-type: none;
+ 
+}
+
+.contact-me-container {
+ width: 100%;
+ padding-top: 10px;
+}
+
+.contact-me,
+.github {
+ text-decoration: none;
+ color: rgb(41, 133, 214);
+}
+
+.contact-me:hover,
+.github:hover {
+ text-decoration: underline;
+}

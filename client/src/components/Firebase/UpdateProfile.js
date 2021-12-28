@@ -11,6 +11,7 @@ export default function UpdateProfile() {
     const [email, setEmail] = useState('')
     const [favoriteTeam, setFavoriteTeam] = useState('')
     const [avatar, setAvatar] = useState('')
+    const [avatarBox, setAvatarBox] = useState(false)
     const history = useHistory();
 
     // current user 
@@ -25,9 +26,13 @@ export default function UpdateProfile() {
         firstname: firstname,
         lastname: lastname,
         favoriteTeam: favoriteTeam,
-        photoURL: avatar
     })
     history.push("/")
+  }
+
+  const fileSelectedHandler = event => {
+    console.log(event)
+
   }
 
 
@@ -41,34 +46,37 @@ export default function UpdateProfile() {
             <form className="update-form">
                 <h1> Update Profile</h1>
 
+                <label>
+                First Name
+                <br />
+                    <input
+                        onChange={(e) => setFirstname(e.target.value)} 
+                        type="text" />
+                </label>
+                <label>
+                Last Name
+                <br />
+                    <input 
+                        onChange={(e) => setLastname(e.target.value)} 
+                        type="text" />
+                </label>
+                <label>
+                Username
+                <br />
+                    <input
+                        onChange={(e) => setUsername(e.target.value)} 
+                        type="text" />
+                </label>
+                <label>
+                Favorite Team
+                <br />
+                    <input
+                        onChange={(e) => setFavoriteTeam(e.target.value)} 
+                        type="text" 
+                        list='suggestions'
+                        size="50px" />
+                </label>
                 
-                <input
-                onChange={(e) => setFirstname(e.target.value)} 
-                type="text" 
-                placeholder="First Name"
-                
-                />
-                <input 
-                onChange={(e) => setLastname(e.target.value)} 
-                type="text" 
-                placeholder="Last Name"
-                
-                />
-                <input
-                onChange={(e) => setUsername(e.target.value)} 
-                type="text" 
-                placeholder="Username"
-               
-                />
-
-                <input
-                onChange={(e) => setFavoriteTeam(e.target.value)} 
-                type="text" 
-                list='suggestions'
-                size="50px"
-                placeholder="Favorite Team"
-                
-                />
                 <datalist id="suggestions">
                     <option value="ARI">ARI</option>
                     <option value="ATL">ATL</option>
@@ -105,33 +113,12 @@ export default function UpdateProfile() {
 
                 </datalist>
                
-                <label> Choose an avatar</label>
-                <div className={"profile-pictures"}>
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Ninja-2-512.png')}
-                    />
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Hipster_Man-128.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Hipster_Man-128.png')}
-                    />
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Sunglasses_Business_Man-128.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Sunglasses_Business_Man-128.png')}
-                    />
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Bearded_Man-19-128.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Bearded_Man-19-128.png')}
-                    />
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Kung_Fu_Man-128.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Kung_Fu_Man-128.png')}
-                    />
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Construction_Man-128.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Construction_Man-128.png')}
-                    />
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Afro-128.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Afro-128.png')}
-                    />
-                    <img alt="avatar" src='https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Sunglasses_Woman-128.png' 
-                        onClick={() => setAvatar('https://cdn3.iconfinder.com/data/icons/avatars-15/64/_Sunglasses_Woman-128.png')}
-                    />
-                </div>
+                {/* <label
+                    onClick={() => setAvatarBox(!avatarBox)}
+                    
+                > Choose an avatar</label>
+                 */}
+                
                 <button
                 type="submit"
                 onClick={updateProfile}

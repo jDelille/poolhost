@@ -17,6 +17,7 @@ import styled, {ThemeProvider} from 'styled-components'
 import {lightTheme, darkTheme, GlobalStyles} from './Themes.js'
 import NewNav from "./Navbar/NewNav";
 import NFL from "./Gamebar/Nfl";
+import About from "./About/About";
 export default function App() {
 
   const [theme, setTheme] = useState('light');
@@ -41,6 +42,8 @@ export default function App() {
             <PrivateRoute exact path='/picks' component={UserPicks} />
             <Route path='/signup' component={Signup} />
             <Route path='/login' component={Login} />
+            <Route path='/about' component={About} />
+
             <PrivateRoute path='/expert-picks' component={Expert} />
             <PrivateRoute path='/chat' component={Chat} />d
             <Route path="/forgot-password" component={ForgotPassword} />

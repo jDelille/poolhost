@@ -3,13 +3,13 @@ import "firebase/auth"
 import 'firebase/firestore'
 
 const app = firebase.initializeApp({
- apiKey: "AIzaSyA1OC29Qdh2eIiP6H-jqRoLj7EvjIN9xo8",
- authDomain: "poolhost-6513a.firebaseapp.com",
- databaseURL: "https://poolhost-6513a-default-rtdb.firebaseio.com",
- projectId: "poolhost-6513a",
- storageBucket: "poolhost-6513a.appspot.com",
- messagingSenderId: "722163122186",
- appId: "1:722163122186:web:90142bb15cf011baf81ff3"
+  apiKey: "AIzaSyCJE0YDdSWqqp2W_dgSgpSslPfJZyZQrOQ",
+  authDomain: "sockhost-3a550.firebaseapp.com",
+  databaseURL: "https://sockhost-3a550-default-rtdb.firebaseio.com",
+  projectId: "sockhost-3a550",
+  storageBucket: "sockhost-3a550.appspot.com",
+  messagingSenderId: "77594944906",
+  appId: "1:77594944906:web:d71872fb879e23257c9473"
 })
 
 export const firebaseRef = firebase;

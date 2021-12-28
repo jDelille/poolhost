@@ -86,10 +86,12 @@ export default function Dashboard() {
                     <Link to="/login" className={currentUser ? 'hide-link' : "menu-login"}>Log In</Link>
                 </div>
 
+
+
                 
                 
             </div>
-         
+         <p className='version'> Version: Beta  </p>
         </div>
         </>
     )

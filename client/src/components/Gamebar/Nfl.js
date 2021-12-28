@@ -16,6 +16,11 @@ export default function NFL() {
       })
   }, [])
 
+  let x = {data: data};
+  let y  = JSON.parse(JSON.stringify(x))
+
+
+
   const [theme, setTheme] = useState('light');
   const StyledApp = styled.div``
 
@@ -28,7 +33,7 @@ export default function NFL() {
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
     <GlobalStyles />
     <StyledApp className="gamebar">
-       {data?.map(item => {
+       {y?.data?.map(item => {
            return (
                <div className="game-box">
                

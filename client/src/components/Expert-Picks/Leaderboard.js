@@ -50,11 +50,13 @@ export default function Leaderboard() {
         <div className="third-place">
           <p> 3 </p>
           {record.map((item, index) => {
-            if(index === 1) {
+            if(index === 2) {
             return (
               <>
               {/* <p className="user-position"> {item.displayName} </p> */}
-              <img className="avatar" src={item.photoURL} alt="avatar" />
+              <img className="avatar" src={item.photoURL} onerror="default.png" alt="avatar" />
+              <p className='top-three-name-third'>{item.displayName}</p>
+
               </>
             )
               
@@ -69,6 +71,8 @@ export default function Leaderboard() {
               <img className="crown" src={Crown} alt="winner" />
                 <img className="avatar" src={item.photoURL} alt="avatar" />
                 {/* <p className="user-position"> {item.displayName} </p> */}
+                <p className='top-three-name-first'>{item.displayName}</p>
+
               </>
             ) 
             } 
@@ -77,11 +81,12 @@ export default function Leaderboard() {
         <div className="second-place">
           <p> 2 </p>
           {record.map((item, index) => {
-            if(index === 2) {
+            if(index === 1) {
             return (
               <>
               {/* <p className="user-position"> {item.displayName} </p> */}
               <img className="avatar" src={item.photoURL} alt="avatar" />
+              <p className='top-three-name-second'>{item.displayName}</p>
               </>
             )
             } 
@@ -108,7 +113,13 @@ export default function Leaderboard() {
             <div className="position">
             
             <img className="loser-avatar" src={item.photoURL} alt="avatar" />
-            <p className="user-position"> {item.displayName} </p>
+            {item.displayName ? (
+              <p className="user-position"> {item.displayName} </p>
+
+            ):(
+              <p className="user-position"> {item.email} </p>
+
+            )}
           </div>
           
           )

@@ -66,8 +66,8 @@ function UserPicks() {
 
     if(counter < 0) {
       counter = 0
-    } else if(counter > 15) {
-      counter = 15
+    } else if(counter > 16) {
+      counter = 16
       
     }
 

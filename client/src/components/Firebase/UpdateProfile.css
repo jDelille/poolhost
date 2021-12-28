@@ -4,24 +4,27 @@
  position: relative;
  display: flex;
  justify-content: center;
- padding-top: 2%;
+ 
 }
 
 .update-form {
  box-shadow: 0 15px 35px 0 rgba(60,6,87, 0.08), 0 5px 15px 0 rgba(0, 0, 0, 0.12);
  width: 50%;
- height: 60%;
+ height: 50%;
  margin: 0 auto;
  display: flex;
  flex-direction: column;
  align-items: center;
  position: relative;
- padding: 20px;
+ padding: 50px;
+ top: 20px;
 }
 
 input {
   border: none;
   border-bottom: 1px solid lightgray;
+  height: 40px;
+  width: 100%;
 }
 
 .box {
@@ -34,7 +37,7 @@ input {
 }
 
 .update-form input {
- width: 80%;
+ width: 100%;
  margin: 0 auto;
  margin-bottom: 12px;
 }
@@ -44,10 +47,13 @@ input {
   width: 80%;
   font-size: 15px;
   margin-bottom: 6px;
+  margin-top: 20px;
   background-color: #635BFF;
   color: white;
   border: none;
   border-radius: 4px;
+  position: relative;
+  top: 20px;
 }
 
 .update-profile-btn {
@@ -56,15 +62,24 @@ input {
 
 
 .profile-pictures {
-  width: 90%;
-  height: 100px;
+  width: 60%;
+  height: 50%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+  background-color: #f8f8f8;
+  border: 1px solid black;
+  z-index: 9999;
+  position: absolute;
+}
+
+.hide-box {
+  display: none;
 }
 
 .profile-pictures img {
-  max-width: 60px;
+  max-width: 50px;
   cursor: pointer;
 }
 
@@ -90,6 +105,10 @@ input {
   .update-form input {
     margin-bottom: 20px;
     width: 80%;
+  }
+
+  .profile-pictures {
+    width: 30%;
   }
   
 }

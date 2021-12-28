@@ -18,6 +18,19 @@
  height: 100%;
 }
 
+.top-three-name-first {
+    position: absolute;
+    top: 62px;
+    font-size: 14px;
+}
+
+.top-three-name-second,
+.top-three-name-third {
+    position: absolute;
+    top: 52px;
+    font-size: 14px;
+}
+
 .top-three {
  height: 15%;
  display: flex;
@@ -26,6 +39,8 @@
  gap: 0.5em;
  align-items: center;
  border-bottom: 2px solid lightgray;
+ margin-bottom: 20px;
+ padding-bottom: 20px;
 }
 
 .third-place,

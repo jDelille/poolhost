@@ -82,7 +82,8 @@ export const GlobalStyles = createGlobalStyle`
   color: ${(props) => props.theme.navboxFont};
  }
 
- .menu-login {
+ .menu-login,
+  {
   color: ${(props) => props.theme.navboxFont};
 
  }
@@ -97,8 +98,18 @@ export const GlobalStyles = createGlobalStyle`
 
  }
 
- 
 
+.display-games-week {
+  background-color: ${(props) => props.theme.picks};
+
+}
+ 
+ .no-team-logo-picks,
+ .display-games,
+ .show-user-pick {
+  background-color: ${(props) => props.theme.expertBar};
+  color: ${(props) => props.theme.font};
+ }
 
 
 
@@ -121,6 +132,7 @@ export const GlobalStyles = createGlobalStyle`
  
  .nav-links-mobile a,
  .menu-logout,
+ .menu-login,
  .update-profile-btn,
  .current-user
   {
@@ -129,6 +141,7 @@ export const GlobalStyles = createGlobalStyle`
 
  .game-time,
  .description,
+ .link-picks
  .description2 {
   color: ${(props) => props.theme.font};
 
@@ -150,7 +163,9 @@ export const GlobalStyles = createGlobalStyle`
  .away-odds p,
  .home-team p,
  .road-team p,
- .login-link {
+ .login-link,
+ p,
+ .at-symbol{
   color: ${(props) => props.theme.font};
  }
 

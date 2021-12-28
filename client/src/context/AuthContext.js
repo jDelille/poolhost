@@ -24,7 +24,9 @@ export function AuthProvider({ children }) {
             db.collection('users').doc(userUID).set({
                 email: email,
                 displayName: null,
-                record: 0
+                picks: [],
+                record: 0,
+                photoURL: 'https://busheyautomotive.com/wp-content/uploads/2016/02/default-profile-pic-300x300.png'
             })
         })
         
