@@ -28,6 +28,7 @@ export function AuthProvider({ children }) {
                 record: 0,
                 photoURL: 'https://busheyautomotive.com/wp-content/uploads/2016/02/default-profile-pic-300x300.png'
             })
+           
         })
         
     }

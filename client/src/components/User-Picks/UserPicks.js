@@ -53,7 +53,7 @@ function UserPicks() {
 
   countPicks()
 
-   // add picks to user collection in firestore
+   // clear picks to user collection in firestore
    const clearPicks = () => {
     const userUID = auth.currentUser.uid;
     let db = firebase.firestore();

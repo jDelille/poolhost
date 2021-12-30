@@ -93,6 +93,7 @@ export default function Header() {
                         </Link>
                     </div>
                     <ul className="nav-links">
+                        <Link to="/picks" className="link">Picks</Link>
                         <Link to="/expert-picks" className="link">Pool</Link>
                         <Link to="/chat" className="link">Chat</Link>
                         <Link to="/about" className="link">About</Link>

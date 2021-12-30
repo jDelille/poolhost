@@ -1,296 +1,358 @@
 .picks-container {
- width: 100%;
- height: 100%;
- position: relative;
- display: flex;
- flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .game-row {
- width: 50%;
- height: 40%;
- margin: 0 auto;
- display: flex;
- flex-direction: column; 
- position: relative;
- padding-top: 10px;
-
+  width: 50%;
+  height: 40%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 10px;
 }
 
 .game-summary {
- position: absolute;
- top: -50px;
- left: 50%;
- transform: translate(-50%, -50%);
- margin-top: 5%;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 5%;
 }
 
 .odds {
- width: 100%;
- padding: 0 30px;
- border-top: 1px solid lightgray;
- border-bottom: 1px solid lightgray;
+  width: 100%;
+  padding: 0 30px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 .matchup-content {
- height: 60%;
- position: absolute;
- bottom: 10%;
- width: 100%;
- display: flex;
- align-items: center;
- justify-content: space-evenly;
+  height: 60%;
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .show-score {
- font-size: 1.5rem;
- font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-
 .matchup-name {
- text-align: center;
- font-size: 22px;
+  text-align: center;
+  font-size: 22px;
 }
 
 .matchup-spread {
- font-size: 20px;
+  font-size: 20px;
 }
 
 .ht-matchup,
 .rt-matchup {
- width: 35%;
- margin-top: 30%;
- display: flex;
- align-items: center;
- flex-direction: column;
- position: relative;
-
+  width: 35%;
+  margin-top: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
 .odds-span {
- float: right;
+  float: right;
 }
 
 .display-name {
- position: relative;
+  position: relative;
 
- font-size: 12px;
- font-weight: bold;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-
-
-.ht-matchup img, 
+.ht-matchup img,
 .rt-matchup img {
- max-width: 70px;
+  max-width: 70px;
 }
 
 .home-team,
 .road-team {
- width: 50%;
- height: 100%;
- display: flex;
- align-items: center;
- flex-direction: column;
- justify-content: center;
- position: relative;
-
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
-
-
 .logo-circle {
- border-radius: 50%;
- padding: 10px;
- border: 1px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  border: 1px solid black;
 }
 
 .logo-circle-inner {
- border-radius: 50%;
- padding: 10px;
+  border-radius: 50%;
+  padding: 10px;
 }
 
 .ht-fav,
 .rt-fav {
- width: 10%;
- position: relative;
- display: flex;
- flex-direction: column;
- position: relative;
- top: 1px;
+  width: 10%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 1px;
 }
 
 .underdog-badge {
- background-color: #FA5C7C;
- height: 14px;
- border-radius: 2px;
- width: 100%;
- display: flex;
- align-items: center;
- justify-content: center;
- color: white;
+  background-color: #fa5c7c;
+  height: 14px;
+  border-radius: 2px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .underdog-badge h3 {
- font-size: 8px;
+  font-size: 8px;
 }
 
 .home-team-logo,
 .road-team-logo {
- max-width: 100px;
+  max-width: 100px;
 }
 
 .vegas-odds {
- background-color: #fff;
- width: 50%;
- margin: 0 auto;
- display: flex;
- justify-content: space-between;
- box-shadow: 0 15px 35px 0 rgba(60,6,87, 0.08), 0 5px 15px 0 rgba(0, 0, 0, 0.12);
- border-radius: 7px;
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 15px 35px 0 rgba(60, 6, 87, 0.08),
+    0 5px 15px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 7px;
 }
 
 .select-btn {
- padding: 8px 36px;
- font-size: 20px;
- display: flex;
- border: none;
- background-color: lightgray;
+  padding: 8px 36px;
+  font-size: 20px;
+  display: flex;
+  border: none;
+  background-color: lightgray;
 }
 
 .skip-btn {
- background-color: #eb244c;
- height: 40px;
- border: none;
- text-transform: uppercase;
- color: white;
-
+  background-color: #eb244c;
+  height: 40px;
+  border: none;
+  text-transform: uppercase;
+  color: white;
 }
 
-
 .select-btn:hover {
- background-color: #0acf97;
- color: black;
- border: none;
+  background-color: #0acf97;
+  color: black;
+  border: none;
 }
 
 .attribution {
- text-align: center;
- color: dodgerblue;
- position: relative;
- top: 100px;
+  text-align: center;
+  color: dodgerblue;
+  position: relative;
+  top: 100px;
 }
 
 .home-odds,
 .away-odds {
- width: 50%;
- display: flex;
- justify-content: space-evenly;
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .away-odds {
- border-left: 2px solid lightgray;
+  border-left: 2px solid lightgray;
 }
 
 .fav-underdog-picks {
- width: 100%;
- height: 100%;
- display: flex;
- align-items: center;
- position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .favorite-badge {
- background-color: #0acf97;
- color: white;
- height: 14px;
- border-radius: 2px;
- 
- width: 100%;
- display: flex;
- align-items: center;
- justify-content: center;
+  background-color: #0acf97;
+  color: white;
+  height: 14px;
+  border-radius: 2px;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .favorite-badge h3 {
- font-size: 8px;
+  font-size: 8px;
 }
 
 .view-picks {
- border: 1px solid lime;
- height: 20%;
- width: 50%;
- margin: 0 auto;
- display: flex;
- flex-direction: column;
+  border: 1px solid lime;
+  height: 20%;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .show-choosen-picks {
- display: flex;
- gap: 1em;
+  display: flex;
+  gap: 1em;
 }
 
 .picks-btn-container {
+  width: 100%;
+  display: flex;
+  height: 50px;
+  margin-bottom: 10px;
+  justify-content: center;
+  gap: 1em;
+  align-items: center;
+}
+
+.picks-summary {
+ height: 100%;
  width: 100%;
- display: flex;
- height: 50px;
- margin-bottom: 10px;
- justify-content: center;
- gap: 1em;
- align-items: center;
+ position: relative;
 }
 
 .review-box {
- display: flex;
- align-items: center;
- justify-content: space-evenly;
- flex-wrap: wrap;
- height: auto;
- width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width: 100%;
+  position: relative;
+  align-items: center;
+}
 
+.rb-icons {
+ width: 60%;
+ height: 100%;
+ display: flex;
+ justify-content: space-evenly;
+ margin: 0 auto;
+ align-items: center;
+ border-radius: 4px;
+ border: 2px solid #eaeeed;
+}
+
+.review-pick-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-pick-box img {
+ max-width: 46px;
+ border-bottom: 1px solid lightgray;
+ padding: 0 2px;
+}
+
+.other-options {
+ width: 60%;
+ height: 50%;
+ display: flex;
+ margin-top: 40px;
+ justify-content: space-evenly;
+}
+
+.reset-box,
+.save-box {
+ width: 50%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ border: 2px solid lightgray;
+ padding: 20px 0;
+
+}
+
+.picks-confirm {
+ font-size: 2em;
+ text-transform: uppercase;
+}
+
+.review-btn {
+ padding: 10px 20px;
+}
+
+#reset-btn {
+ background-color: #fa5c7c;
+ border: none;
+ color: white;
+ padding: 10px 20px;
+ border-radius: 3px;
+ font-size: 14px;
+}
+
+#pool-btn {
+ background-color: #0acf97;
+ border: none;
+ color: white;
+ padding: 10px 20px;
+ border-radius: 3px;
+ font-size: 14px;
 }
 
 @media screen and (max-width: 780px) {
+  .game-row {
+    width: 100%;
+  }
 
- .game-row {
-  width: 100%;
- }
+  .vegas-odds {
+    width: 100%;
+  }
 
- .vegas-odds {
-  width: 100%;
- }
+  .odds {
+  }
 
- .odds {
-  
- }
+  .review-box {
+    gap: 1em;
+  }
 
- .review-box {
-  flex-direction: column;
-  gap: 1em;
- }
+  .picks-container {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+  }
 
- .picks-container {
-  width: 95%;
-  margin: 0 auto;
-  position: relative;
- }
+  .ht-matchup,
+  .rt-matchup {
+    margin-top: 65%;
+    width: 50%;
+  }
 
- .ht-matchup,
- .rt-matchup {
-  margin-top: 65%;
-  width: 50%;
- }
+  .home-odds,
+  .away-odds {
+    width: 100%;
+  }
 
- .home-odds,
-.away-odds {
- width: 100%;
-}
-
-.game-summary {
- margin-top: 10%;
-}
-
-
-
+  .game-summary {
+    margin-top: 10%;
+  }
 }
