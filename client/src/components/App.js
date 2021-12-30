@@ -39,15 +39,15 @@ export default function App() {
           <NewNav />
           <Switch>
             <Route exact path='/' component={Dashboard} />
-            <PrivateRoute exact path='/picks' component={UserPicks} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/login' component={Login} />
-            <Route path='/about' component={About} />
+            <PrivateRoute exact path='picks' component={UserPicks} />
+            <Route path='signup' component={Signup} />
+            <Route path='login' component={Login} />
+            <Route path='about' component={About} />
 
-            <PrivateRoute path='/expert-picks' component={Expert} />
-            <PrivateRoute path='/chat' component={Chat} />d
-            <Route path="/forgot-password" component={ForgotPassword} />
-            <Route path="/update-profile" component={UpdateProfile} />
+            <PrivateRoute path='expert-picks' component={Expert} />
+            <PrivateRoute path='chat' component={Chat} />d
+            <Route path="forgot-password" component={ForgotPassword} />
+            <Route path="update-profile" component={UpdateProfile} />
           </Switch>
         </AuthProvider>
       </Router>
