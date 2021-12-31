@@ -4,6 +4,7 @@ import Signup from "./Firebase/Signup";
 import './App.css'
 import { AuthProvider } from "../context/AuthContext";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import { HashRouter } from "react-router-dom";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Firebase/Login";
 import PrivateRoute from "./Firebase/PrivateRoute";
@@ -32,7 +33,7 @@ export default function App() {
     <GlobalStyles />
     <StyledApp className='app'>
    
-      <Router>
+      <HashRouter>
       
         <AuthProvider>
           <NFL />
@@ -50,7 +51,7 @@ export default function App() {
             <Route path="/update-profile" component={UpdateProfile} />
           </Switch>
         </AuthProvider>
-      </Router>
+      </HashRouter>
     </StyledApp>
     </ThemeProvider>
   );
