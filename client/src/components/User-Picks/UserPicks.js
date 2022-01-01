@@ -10,22 +10,29 @@ import { auth, firestore } from '../Firebase/firebase'
 import MakePicks from './MakePicks'
 import {lightTheme, darkTheme, GlobalStyles} from '../Themes.js'
 import styled, {ThemeProvider} from 'styled-components'
+import UpdatedPicks from './UpdatedPicks'
 
 function UserPicks() {
 
   let [pick, setPick] = useState('')
   const [newData, setNewData] = useState([])
   let [counter, setCounter] = useState(0)
+  let [game, setGame] = useState('')
 
 
   // add picks to user collection in firestore
    const addPicks = () => {
     const userUID = auth.currentUser.uid;
     let db = firebase.firestore();
-    db.collection('users').doc(userUID).update({
-        picks: firebase.firestore.FieldValue.arrayUnion(pick)
+    db.collection('users').doc(userUID).collection('picks').doc('user_picks').update({
+        game: firebase.firestore.FieldValue.arrayUnion(game),
     })
+    db.collection('users').doc(userUID).update({
+      picks: firebase.firestore.FieldValue.arrayUnion(pick),
+  })
+    
   }
+  
 
   addPicks()
 
@@ -85,7 +92,8 @@ function UserPicks() {
     <>
       {/* <button
         onClick={clearPicks()}> Clear Picks </button> */}
-       {endOfPicks ? <h1>hey</h1> : <MakePicks setPick={setPick} counter={counter} setCounter={setCounter} addPicks={addPicks} endOfPicks={endOfPicks} setEndOfPicks={setEndOfPicks} />}
+       {endOfPicks ? <h1>hey</h1> : <MakePicks setPick={setPick} counter={counter} setCounter={setCounter} addPicks={addPicks} endOfPicks={endOfPicks} setGame={setGame} setEndOfPicks={setEndOfPicks} />}
+       {/* <UpdatedPicks /> */}
 
     </>
   )

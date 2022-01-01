@@ -11,9 +11,8 @@ export default function MakePicks({
   setPick,
   counter,
   setCounter,
+  setGame,
   addPicks,
-  endOfPicks,
-  setEndOfPicks,
 }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -63,8 +62,26 @@ export default function MakePicks({
       });
   }
 
+  const [testing, setTesting] = useState([]);
+
+  function pickCollection() {
+    let db = firebase.firestore();
+    const userUID = auth.currentUser.uid;
+    db.collection("users")
+      .doc(userUID)
+      .collection("picks")
+      .doc("user_picks")
+      .get()
+      .then(function (value) {
+        setTesting(value.data()["game"]);
+      });
+  }
+
+  console.log(testing);
+
   useEffect(() => {
     fetchPicks();
+    pickCollection();
   }, []);
 
   useEffect(() => {
@@ -77,8 +94,11 @@ export default function MakePicks({
   function removePicks() {
     const userUID = auth.currentUser.uid;
     let db = firebase.firestore();
-    db.collection('users').doc(userUID).update({
-        picks: firebase.firestore.FieldValue.delete()
+    db.collection("users").doc(userUID).update({
+      picks: firebase.firestore.FieldValue.delete(),
+    });
+    db.collection("users").doc(userUID).collection('picks').doc('user_picks').update({
+      game: []
     })
   }
 
@@ -93,7 +113,7 @@ export default function MakePicks({
 
   return counter < 16 ? (
     <div className="picks-container">
-      {loading && counter < 16 && userPicks.picks.length < 17 ? (
+      {loading && counter < 16 && testing.length < 17 ? (
         filteredGames?.map((item) => {
           return (
             <>
@@ -115,6 +135,13 @@ export default function MakePicks({
                         className="select-btn"
                         onClick={() => {
                           setPick(item?.homeTeam);
+                          setGame({
+                            team: item?.homeTeam,
+                            displayName: item?.homeDisplayName,
+                            record: item?.homeRecord,
+                            favorite: item?.homeTeamFavorite,
+                            summary: item?.summary,
+                          });
                           setCounter(counter + 1);
                         }}
                       >
@@ -172,6 +199,13 @@ export default function MakePicks({
                         className="select-btn"
                         onClick={() => {
                           setPick(item?.awayTeam);
+                          setGame({
+                            team: item?.awayTeam,
+                            displayName: item?.awayDisplayName,
+                            record: item?.awayRecord,
+                            favorite: item?.awayTeamFavorite,
+                            summary: item?.summary,
+                          });
                           setCounter(counter + 1);
                         }}
                       >
@@ -243,20 +277,38 @@ export default function MakePicks({
             </button>
           </div>
           <div className="review-box">
-            <div className="rb-title">
-            </div>
+            <div className="rb-title"></div>
             <div className="rb-icons">
               {showUserPicks ? (
-                userPicks?.picks?.map((item, index) => {
+                testing.map((item, index) => {
                   if (index !== 0) {
                     return (
                       <div className="review-pick-box">
-                        <p> </p>
-                        <img
+                        <div className="top">
+                        
+                          <div className="team-summary">
+                          
+                          <p className="picked-summary"> {item.summary}</p>
+                          {item.favorite ? (
+                          <p className="favorite"> favorite </p>
+                        ):(
+                          <p className="underdog"> underdog </p>
+                        )}
+                          </div>
+                        </div>
+                        <div className="middle">
+                          <div className="team-logo-name">
+                            <img
                           className="team-logo-picks game-pick"
-                          src={`../icons/${item}.svg`}
+                          src={`../icons/${item.team}.svg`}
                           alt="logo"
                         />
+                            <p className="name"> {item.displayName}</p>
+                          </div>
+                          <div className="team-record">
+                          <p className="pick-record"> {item.record}</p>
+                        </div>
+                        </div>
                       </div>
                     );
                   }
@@ -268,7 +320,10 @@ export default function MakePicks({
             <div className="other-options">
               <div className="reset-box">
                 <p> Don't like your picks? </p>
-                <Link to="/picks" onClick={removePicks} id="reset-btn"> Reset Picks </Link>
+                <Link to="/picks" onClick={removePicks} id="reset-btn">
+                  {" "}
+                  Reset Picks{" "}
+                </Link>
               </div>
               <div className="save-box">
                 <p> Satisfied with your picks? </p>
@@ -283,34 +338,51 @@ export default function MakePicks({
     </div>
   ) : (
     <div className="picks-summary">
-          <div className="picks-btn-container">
-            <button
-              onClick={() => {
-                fetchPicks();
-                setShowUserPicks(true);
-              }}
-              className="review-btn"
-            >
-              {" "}
-              Click to review your picks{" "}
-            </button>
-          </div>
-          <div className="review-box">
-            <div className="rb-title">
-              <p> Your Picks </p>
-            </div>
+      <div className="picks-btn-container">
+        <button
+          onClick={() => {
+            fetchPicks();
+            setShowUserPicks(true);
+          }}
+          className="review-btn"
+        >
+          {" "}
+          Click to review your picks{" "}
+        </button>
+      </div>
+      <div className="review-box">
+            <div className="rb-title"></div>
             <div className="rb-icons">
               {showUserPicks ? (
-                userPicks?.picks?.map((item, index) => {
+                testing.map((item, index) => {
                   if (index !== 0) {
                     return (
                       <div className="review-pick-box">
-                        <p> </p>
-                        <img
+                        <div className="top">
+                        
+                          <div className="team-summary">
+                          
+                          <p className="picked-summary"> {item.summary}</p>
+                          {item.favorite ? (
+                          <p className="favorite"> favorite </p>
+                        ):(
+                          <p className="underdog"> underdog </p>
+                        )}
+                          </div>
+                        </div>
+                        <div className="middle">
+                          <div className="team-logo-name">
+                            <img
                           className="team-logo-picks game-pick"
-                          src={`../icons/${item}.svg`}
+                          src={`../icons/${item.team}.svg`}
                           alt="logo"
                         />
+                            <p className="name"> {item.displayName}</p>
+                          </div>
+                          <div className="team-record">
+                          <p className="pick-record"> {item.record}</p>
+                        </div>
+                        </div>
                       </div>
                     );
                   }
@@ -322,7 +394,10 @@ export default function MakePicks({
             <div className="other-options">
               <div className="reset-box">
                 <p> Don't like your picks? </p>
-                <Link to="/picks" onClick={removePicks} id="reset-btn"> Reset Picks </Link>
+                <Link to="/picks" onClick={removePicks} id="reset-btn">
+                  {" "}
+                  Reset Picks{" "}
+                </Link>
               </div>
               <div className="save-box">
                 <p> Satisfied with your picks? </p>
@@ -332,6 +407,6 @@ export default function MakePicks({
               </div>
             </div>
           </div>
-        </div>
+    </div>
   );
 }

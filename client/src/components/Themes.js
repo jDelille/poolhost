@@ -118,16 +118,16 @@ export const GlobalStyles = createGlobalStyle`
   color: ${(props) => props.theme.font};
  }
 
- .expert-bar
+ ${'' /* .expert-bar
   {
   background-color: ${(props) => props.theme.expertBar};
 
- }
+ } */}
  ${'' /* .expert-bar:nth-of-type(odd) */}
  
- .user-bar {
+ ${'' /* .user-bar {
   background-color: ${(props) => props.theme.expertBar};
-}
+} */}
 
  
  .nav-links-mobile a,
