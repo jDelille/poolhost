@@ -109,16 +109,18 @@ export default function Header() {
                         ''
                     )}
                         <ul className="nav-links-mobile">
-                            <Link to="/expert-picks" className="link">Pool</Link>
-                            <Link to="/chat" className="link">Chat</Link>
-                        </ul>
                         <div className='nav-menu-signup'>
                             <Link to="/Signup" className={currentUser ? 'hide-link' : "menu-signin"}>Sign Up</Link>
                             <Link to="/login" className={currentUser ? 'hide-link' : "menu-login"}>Log In</Link>
                         </div>
+                            <Link to="/picks" className="link">Picks</Link>
+                            <Link to="/expert-picks" className="link">Pool</Link>
+                            <Link to="/chat" className="link">Chat</Link>
+                        </ul>
+                        
                         <div className='nav-menu-other'>
                             <Link to="/update-profile" className={currentUser ? "update-profile-btn" : "hide-link"}> Update Profile</Link>
-                            <Link to="/picks" className="link">Picks</Link>
+                            {/* <Link to="/picks" className="link">Picks</Link> */}
 
 
                             <div className='theme-toggler'>

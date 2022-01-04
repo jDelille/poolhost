@@ -106,7 +106,7 @@ nav {
 }
 
 .nav-menu-signup {
-    width: 100%;
+    width: 95%;
     height: 85px;
     display: flex;
     flex-direction: column;
@@ -205,12 +205,13 @@ nav {
 
 .theme-toggler {
    display: flex;
+   justify-content: center;
    align-items: center;
    flex-direction: column;
-   width: 100%;
+   width: 90%;
    position: relative;
-   bottom: 0px;
-   align-items: center;
+   bottom: -120px;
+   margin: 0 auto;
 }
 
 .toggler-icon {
@@ -242,11 +243,11 @@ nav {
     }
     .nav-links-mobile {
         display: flex;
-        margin-top: 40px;
         flex-direction: column;
         height: auto;
         gap: 1em;
         justify-content: space-evenly;
+        
     }
     .current-user {
         position: absolute;
@@ -265,6 +266,12 @@ nav {
         border-radius: 0;
     }
     .menu-logout {
-        top: 120px;
+        
+    }
+
+    .theme-toggler {
+        position: absolute;
+        bottom: 40px;
+        
     }
   }
