@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  
   "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
@@ -13,6 +12,7 @@
     "firebase": "^8.9.1",
     "got": "^12.0.0",
     "gsap": "^3.8.0",
+    "heroku": "^7.59.2",
     "phoenix": "^1.6.6",
     "react": "^17.0.2",
     "react-anime": "^4.1.1",
