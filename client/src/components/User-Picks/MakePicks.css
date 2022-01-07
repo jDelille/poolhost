@@ -346,19 +346,6 @@
   align-items: center;
 }
 
-.review-pick-box .name {
-}
-
-.review-pick-box .record {
-}
-
-.review-pick-box .summary {
-}
-
-.review-pick-box .favorite,
-.review-pick-box .underdog {
-}
-
 .other-options {
   width: 60%;
   height: 50%;
@@ -421,14 +408,12 @@
     width: 80%;
   }
 
-
-
   .odds {
   }
 
   .review-box {
     flex-direction: column;
-  height: auto;
+    height: auto;
   }
 
   .picks-container {

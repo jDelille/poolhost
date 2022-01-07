@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import Loader from "../Loading";
+import Loader from "../Loading/Loading";
 import firebase from "firebase";
 import { auth } from "../Firebase/firebase";
 import { Link } from "react-router-dom";
 
 import "./MakePicks.css";
-import UserPicks from "./UserPicks";
 
 export default function MakePicks({
   setPick,
@@ -16,8 +15,6 @@ export default function MakePicks({
 }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [team, setTeam] = useState("");
-  const [selected, setSelected] = useState(false);
   const [userPicks, setUserPicks] = useState("");
   const [showUserPicks, setShowUserPicks] = useState(false);
 
@@ -51,7 +48,6 @@ export default function MakePicks({
   function fetchPicks() {
     let db = firebase.firestore();
     let usersEmail = auth.currentUser.email;
-    const userUID = auth.currentUser.uid;
     db.collection("users")
       .where("email", "==", usersEmail)
       .get()
@@ -97,9 +93,13 @@ export default function MakePicks({
     db.collection("users").doc(userUID).update({
       picks: firebase.firestore.FieldValue.delete(),
     });
-    db.collection("users").doc(userUID).collection('picks').doc('user_picks').update({
-      game: []
-    })
+    db.collection("users")
+      .doc(userUID)
+      .collection("picks")
+      .doc("user_picks")
+      .update({
+        game: [],
+      });
   }
 
   let games = gameLabels[0]?.week[counter];
@@ -285,29 +285,27 @@ export default function MakePicks({
                     return (
                       <div className="review-pick-box">
                         <div className="top">
-                        
                           <div className="team-summary">
-                          
-                          <p className="picked-summary"> {item.summary}</p>
-                          {item.favorite ? (
-                          <p className="favorite"> favorite </p>
-                        ):(
-                          <p className="underdog"> underdog </p>
-                        )}
+                            <p className="picked-summary"> {item.summary}</p>
+                            {item.favorite ? (
+                              <p className="favorite"> favorite </p>
+                            ) : (
+                              <p className="underdog"> underdog </p>
+                            )}
                           </div>
                         </div>
                         <div className="middle">
                           <div className="team-logo-name">
                             <img
-                          className="team-logo-picks game-pick"
-                          src={`../icons/${item.team}.svg`}
-                          alt="logo"
-                        />
+                              className="team-logo-picks game-pick"
+                              src={`../icons/${item.team}.svg`}
+                              alt="logo"
+                            />
                             <p className="name"> {item.displayName}</p>
                           </div>
                           <div className="team-record">
-                          <p className="pick-record"> {item.record}</p>
-                        </div>
+                            <p className="pick-record"> {item.record}</p>
+                          </div>
                         </div>
                       </div>
                     );
@@ -351,62 +349,60 @@ export default function MakePicks({
         </button>
       </div>
       <div className="review-box">
-            <div className="rb-title"></div>
-            <div className="rb-icons">
-              {showUserPicks ? (
-                testing.map((item, index) => {
-                  if (index !== 0) {
-                    return (
-                      <div className="review-pick-box">
-                        <div className="top">
-                        
-                          <div className="team-summary">
-                          
-                          <p className="picked-summary"> {item.summary}</p>
-                          {item.favorite ? (
+        <div className="rb-title"></div>
+        <div className="rb-icons">
+          {showUserPicks ? (
+            testing.map((item, index) => {
+              if (index !== 0) {
+                return (
+                  <div className="review-pick-box">
+                    <div className="top">
+                      <div className="team-summary">
+                        <p className="picked-summary"> {item.summary}</p>
+                        {item.favorite ? (
                           <p className="favorite"> favorite </p>
-                        ):(
+                        ) : (
                           <p className="underdog"> underdog </p>
                         )}
-                          </div>
-                        </div>
-                        <div className="middle">
-                          <div className="team-logo-name">
-                            <img
+                      </div>
+                    </div>
+                    <div className="middle">
+                      <div className="team-logo-name">
+                        <img
                           className="team-logo-picks game-pick"
                           src={`../icons/${item.team}.svg`}
                           alt="logo"
                         />
-                            <p className="name"> {item.displayName}</p>
-                          </div>
-                          <div className="team-record">
-                          <p className="pick-record"> {item.record}</p>
-                        </div>
-                        </div>
+                        <p className="name"> {item.displayName}</p>
                       </div>
-                    );
-                  }
-                })
-              ) : (
-                <p className="picks-confirm"> You're picks are locked in! </p>
-              )}
-            </div>
-            <div className="other-options">
-              <div className="reset-box">
-                <p> Don't like your picks? </p>
-                <Link to="/picks" onClick={removePicks} id="reset-btn">
-                  {" "}
-                  Reset Picks{" "}
-                </Link>
-              </div>
-              <div className="save-box">
-                <p> Satisfied with your picks? </p>
-                <Link to="/expert-picks" className="link-picks" id="pool-btn">
-                  View Pool
-                </Link>
-              </div>
-            </div>
+                      <div className="team-record">
+                        <p className="pick-record"> {item.record}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            })
+          ) : (
+            <p className="picks-confirm"> You're picks are locked in! </p>
+          )}
+        </div>
+        <div className="other-options">
+          <div className="reset-box">
+            <p> Don't like your picks? </p>
+            <Link to="/picks" onClick={removePicks} id="reset-btn">
+              {" "}
+              Reset Picks{" "}
+            </Link>
           </div>
+          <div className="save-box">
+            <p> Satisfied with your picks? </p>
+            <Link to="/expert-picks" className="link-picks" id="pool-btn">
+              View Pool
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

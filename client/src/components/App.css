@@ -2,12 +2,10 @@
   width: 100vw;
   height: 100vh;
   position: relative;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   align-items: center;
   overflow-x: hidden;
 }
-
-
 
 .gamebar-container {
   width: auto;
@@ -30,12 +28,8 @@
   padding: 0 7%;
 }
 
-
-
 @media screen and (max-width: 780px) {
-
   .news-section {
-    padding: 0
+    padding: 0;
   }
-     
-  }
+}

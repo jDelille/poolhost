@@ -153,6 +153,10 @@ nav {
 
 }
 
+/* =|===================
+    Hide Drop Down Links
+======================== */
+
 .hide-link {
     visibility: hidden;
     width: 340px;
@@ -170,6 +174,10 @@ nav {
     border-radius: 10px;
 
 }
+
+/* =|=============================
+    Hide nav links for mobile view 
+================================== */
 
 .nav-links-mobile {
     display: none;

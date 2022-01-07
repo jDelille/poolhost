@@ -67,16 +67,6 @@ export default function Expert() {
     });
   }, []);
 
-  // let weekArr = []
-
-  // useEffect(() => {
-  //   weekArr.push([...week])
-
-  //   console.log(weekArr)
-  //   setGameLabels(...weekArr)
-
-  // }, [])
-
   useEffect(() => {
     fetch(`/gamebar`)
       .then((res) => res.json())
@@ -88,7 +78,6 @@ export default function Expert() {
   // get data from firestore collection onto page
   async function getStuff() {
     let db = firebase.firestore();
-    const userUID = auth.currentUser.uid;
     let things = await db.collection("users").get();
     return things.docs.map((doc) => setNewData(doc.data()));
   }
@@ -97,7 +86,6 @@ export default function Expert() {
   function fetchPicks() {
     let db = firebase.firestore();
     let usersEmail = auth.currentUser.email;
-    const userUID = auth.currentUser.uid;
     db.collection("users")
       .where("email", "==", usersEmail)
       .get()
@@ -123,11 +111,6 @@ export default function Expert() {
     });
   };
 
-  // function getWeeklyGames() {
-  //   let db = firebase.firestore()
-  //   let things = db.collection('games').get()
-
-  // }
 
   // get current user picks
   function getAllData() {
@@ -156,10 +139,6 @@ export default function Expert() {
         });
         setGameLabels(matchups);
       });
-
-    // let games = []
-    // games.push(gameLabels)
-    // setGameLabels(games)
   }
 
   let finalArr = [];

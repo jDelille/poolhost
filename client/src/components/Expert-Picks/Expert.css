@@ -1,328 +1,283 @@
 .expert-page {
- width: 100%;
- position: relative;
- height: 100%;
- display: flex;
+  width: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
 }
 
 .pick-chart {
- margin-top: 20px;
- width: 80%;
- overflow-y: scroll;
- position: relative;
- overflow-x: hidden;
- margin-left: auto;
- margin-bottom: 100px;
+  margin-top: 20px;
+  width: 80%;
+  overflow-y: scroll;
+  position: relative;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-bottom: 100px;
 }
-
 
 .affiliation {
- color: dodgerblue;
- font-size: 16px;
- position: absolute;
- bottom: 2px;
- left: 10px;
+  color: dodgerblue;
+  font-size: 16px;
+  position: absolute;
+  bottom: 2px;
+  left: 10px;
 }
-
-
-
-
 
 .tied {
- border: 2px solid #FFBC00;
- border-radius: 4px;
-
+  border: 2px solid #ffbc00;
+  border-radius: 4px;
 }
-
-
 
 .show-picks {
- width: 100%;
- height: 100%;
- position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-
-
-
 
 /* weekly games bar  */
 .expert-labels-container {
- width: 100%;
- height: 85px;
- position: relative;
- display: flex;
- color: black;
- align-items: center;
- justify-content: space-between;
- position: relative;
- z-index: 999;
- 
-
+  width: 100%;
+  height: 85px;
+  position: relative;
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 999;
 }
-
-
-/* make the weekly games bar sticky
-.expert-labels-container {
- position: sticky;
- top: 1px;
- width: 100%;
-} */
 
 .labels,
 .expert-info {
- min-width: 10%;
- height: 100%;
-
+  min-width: 10%;
+  height: 100%;
 }
 
 .hide-user-picks {
- width: 100%;
- height: 50px;
- display: flex;
- align-items: center;
- color: black;
- position: relative;
- /* border-top: 2px solid #FFBC00;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+  position: relative;
+  /* border-top: 2px solid #FFBC00;
  border-bottom: 2px solid #FFBC00; */
- box-shadow: 0 15px 35px 0 rgba(60,6,87, 0.08), 0 5px 15px 0 rgba(0, 0, 0, 0.12);
- position: relative;
- top: 85px;
- z-index: 999;
- background-color: lime;
+  box-shadow: 0 15px 35px 0 rgba(60, 6, 87, 0.08),
+    0 5px 15px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  top: 85px;
+  z-index: 999;
+  background-color: lime;
 }
 
 .no-picks {
- background-color: yellow;
- position: relative;
- z-index: 9999;
+  background-color: yellow;
+  position: relative;
+  z-index: 9999;
 }
-
 
 .ex-labels {
- height: 100%;
- width: 100%;
- 
+  height: 100%;
+  width: 100%;
 }
 
-
-
 .ex-labels h1 {
- position: absolute;
- bottom: 10px;
- left: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }
 
 .expert-labels-games,
 .expert-picked-teams {
- width: 90%;
- height: 50px;
- display: flex;
+  width: 90%;
+  height: 50px;
+  display: flex;
 }
 
 .expert-labels-container h1 {
- font-size: 12px;
+  font-size: 12px;
 }
 
-
-
 .expert-picks-container {
- height: 100%;
- display: flex;
- flex-direction: column;
- position: relative;
- width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
 }
 
 .user-bar {
- width: 100%;
- height: 50px;
- display: flex;
- align-items: center;
- color: black;
- position: relative;
- /* border-top: 2px solid #FFBC00;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+  position: relative;
+  /* border-top: 2px solid #FFBC00;
  border-bottom: 2px solid #FFBC00; */
- /* box-shadow: 0 15px 35px 0 rgba(60,6,87, 0.08), 0 5px 15px 0 rgba(0, 0, 0, 0.12); */
- position: relative;
+  /* box-shadow: 0 15px 35px 0 rgba(60,6,87, 0.08), 0 5px 15px 0 rgba(0, 0, 0, 0.12); */
+  position: relative;
 
- z-index: 999;
-
+  z-index: 999;
 }
 
 .show-user-pick {
- border: 1px solid lightgray;
+  border: 1px solid lightgray;
 }
 
 .expert-bar {
- width: 100%;
- height: 50px;
- display: flex;
- align-items: center;
- color: black;
- margin-top: 10px;
- position: relative;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+  margin-top: 10px;
+  position: relative;
 }
 
 .no-picks-list {
- z-index: 1;
- position: absolute;
- height: 46px;
- display: flex;
- width: 100%;
- border: 1px solid lightgray;
+  z-index: 1;
+  position: absolute;
+  height: 46px;
+  display: flex;
+  width: 100%;
+  border: 1px solid lightgray;
 }
 
-
 .expert-name {
- height: 48px;
- display: flex;
- min-width: 12%;
- flex-direction: column;
- position: relative;
- border-top: 1px solid lightgray;
- border-bottom: 1px solid lightgray;
- justify-content: left;
+  height: 48px;
+  display: flex;
+  min-width: 12%;
+  flex-direction: column;
+  position: relative;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  justify-content: left;
 }
 
 .expert {
- font-size: 10px;
- position: absolute;
- bottom: 10px;
- color: dodgerblue;
- left: 2px
+  font-size: 10px;
+  position: absolute;
+  bottom: 10px;
+  color: dodgerblue;
+  left: 2px;
 }
 
 .hide {
- opacity: 0;
+  opacity: 0;
   width: 72px;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
- display: flex;
- align-items: center;
- flex-direction: column;
- justify-content: center;
- z-index: 900;
- background-color: #fff;
- height: 48px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 900;
+  background-color: #fff;
+  height: 48px;
 }
 
-
 .at-symbol {
- margin: 0;
- padding: 0;
- position: relative;
- bottom: 1px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 1px;
 }
 
 #popup {
- top: auto;
- bottom: 10px;
- outline: none;
+  top: auto;
+  bottom: 10px;
+  outline: none;
 }
 
 .home-label,
 .away-label {
- margin: 0;
- padding: 0;
- font-size: 12px;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
 }
 
 .away-label {
- position: relative;
- top: 1px;
+  position: relative;
+  top: 1px;
 }
 
 .winner {
- color: #30ba67 ;
- border-radius: 4px;
- font-size: 12px;
- margin: 0;
- padding: 0;
+  color: #30ba67;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .loser {
- color: #FA5C7C;
- border-radius: 4px;
- font-size: 12px;
- margin: 0;
- padding: 0;
- 
+  color: #fa5c7c;
+  border-radius: 4px;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
 
 .email-display {
- font-size: 12px;
+  font-size: 12px;
 }
 
 .display-games-week {
- width: 72px;
- display: flex;
- align-items: center;
- border-right: 1px solid lightgray;
- border-left: 1px solid lightgray;
- flex-direction: column;
- justify-content: center;
- z-index: 900;
- background-color: #f8f8f8;
+  width: 72px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 900;
+  background-color: #f8f8f8;
 }
 .display-games,
 .show-user-pick,
 .no-team-logo-picks {
- width: 72px;
- display: flex;
- align-items: center;
- flex-direction: column;
- justify-content: center;
- z-index: 900;
- background-color: #fff;
- height: 50px;
+  width: 72px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 900;
+  background-color: #fff;
+  height: 50px;
 }
 
 .no-team-logo-picks {
- width: 72px;
- background-color: lime;
- height: 100%;
- position: relative;
- bottom: 22px;
- border-left: 1px solid lightgray;
+  width: 72px;
+  background-color: lime;
+  height: 100%;
+  position: relative;
+  bottom: 22px;
+  border-left: 1px solid lightgray;
 }
-
-
-
-
 
 .no-picks-list {
- height: 30px;
- border: none;
+  height: 30px;
+  border: none;
 }
-
-
 
 .expert-picked-teams {
- display: flex;
- align-items: center;
- position: relative;
- 
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-
 
 .expert-picked-teams img {
- max-width: 30px;
+  max-width: 30px;
 }
 
-
 @media screen and (max-width: 780px) {
+  .expert-page {
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+  }
 
- .expert-page {
-  display: flex;
-  flex-direction: column;
-  overflow-x: scroll;
- }
-
- .pick-chart {
-  width: auto;
- }
-
-
-
- 
+  .pick-chart {
+    width: auto;
+  }
 }

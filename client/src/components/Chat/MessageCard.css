@@ -1,82 +1,76 @@
 .content {
- height: 70px;
- width: 30%;
- display: flex;
- margin: 0 auto;
- margin-bottom: 20px;
- position: relative;
- padding: 5px;
- background-color: dodgerblue;
- color: white;
- border-radius: 4px;
- flex-direction: column;
- 
+  height: 70px;
+  width: 30%;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+  padding: 5px;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 4px;
+  flex-direction: column;
 }
 
 .text {
- position: relative;
- bottom: 10px;
- color: white;
+  position: relative;
+  bottom: 10px;
+  color: white;
 }
 
 .delete-chat-btn {
- position: absolute;
- right: 10px;
- bottom: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 
 button {
- cursor: pointer;
+  cursor: pointer;
 }
 
 .user-name {
- color: white;
- position: absolute;
- bottom: 0;
- font-size: 10px;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
 }
 
 .photo img {
- max-width: 40px;
- border-radius: 50%;
- position: absolute;
- top: 10px;
- right: 5px;
+  max-width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 5px;
 }
 
 .sent {
- position: relative;
- left: 30%;
+  position: relative;
+  left: 30%;
 }
 
-
 .received {
- position: relative;
- right: 30%;
+  position: relative;
+  right: 30%;
 }
 
 .received .content {
- background-color: #1ad39f;
+  background-color: #1ad39f;
 }
 
 @media screen and (max-width: 780px) {
+  .content {
+    width: 60%;
+    display: flex;
+  }
 
- .content {
-  width: 60%;
-  display: flex;
- }
+  .text {
+  }
 
- .text {
- }
+  .sent {
+    left: 15%;
+  }
 
- .sent {
-  left: 15%
- }
-
- .received {
-  right: 15%;
- }
-
- 
-
+  .received {
+    right: 15%;
+  }
 }

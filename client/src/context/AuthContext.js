@@ -1,89 +1,77 @@
-import React, { useContext, useState, useEffect, createContext } from 'react'
-import { auth } from '../components/Firebase/firebase'
-import firebase from 'firebase';
+import React, { useContext, useState, useEffect, createContext } from "react";
+import { auth } from "../components/Firebase/firebase";
+import firebase from "firebase";
 
-const AuthContext = createContext()
+const AuthContext = createContext();
 export default AuthContext;
 
-
 export function useAuth() {
-    return useContext(AuthContext)
+  return useContext(AuthContext);
 }
 
 export function AuthProvider({ children }) {
+  const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
 
-    const [currentUser, setCurrentUser] = useState()
-    const [loading, setLoading] = useState(true)
+  function signup(email, password) {
+    let noob = auth.createUserWithEmailAndPassword(email, password);
+    noob.then(function () {
+      let userUID = auth.currentUser.uid;
+      let db = firebase.firestore();
 
-    function signup(email, password) {
-        let noob = auth.createUserWithEmailAndPassword(email, password)
-        noob.then(function () {
-            let userUID = auth.currentUser.uid;
-            let db = firebase.firestore();
+      db.collection("users").doc(userUID).set({
+        email: email,
+        displayName: null,
+        picks: [],
+        record: 0,
+        photoURL:
+          "https://busheyautomotive.com/wp-content/uploads/2016/02/default-profile-pic-300x300.png",
+      });
 
-            db.collection('users').doc(userUID).set({
-                email: email,
-                displayName: null,
-                picks: [],
-                record: 0,
-                photoURL: 'https://busheyautomotive.com/wp-content/uploads/2016/02/default-profile-pic-300x300.png'
-            })
+      db.collection("users")
+        .doc(userUID)
+        .collection("picks")
+        .doc("user_picks")
+        .set({
+          picks: [],
+          game: [],
+        });
+    });
+  }
 
-            db.collection('users').doc(userUID).collection('picks').doc('user_picks').set({
-                picks: [],
-                game: []
-            })
-           
-        })
-        
-    }
+  function login(email, password) {
+    auth.signInWithEmailAndPassword(email, password);
+  }
 
-    function login(email, password) {
-        auth.signInWithEmailAndPassword(email, password)
-        // member.then(function () {
-        //     let userUID = auth.currentUser.uid;
-        //     let db = firebase.firestore();
+  function logout() {
+    auth.signOut();
+  }
 
-        //     db.collection('users').doc(userUID).set({
-        //         email: email,
-        //         displayName: null
-                
-        //     })
-        // })
-    }
+  function resetPassword(email) {
+    return auth.sendPasswordResetEmail(email);
+  }
 
-    function logout() {
-          
-        auth.signOut();
+  useEffect(() => {
+    const unsubscribed = auth.onAuthStateChanged((user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
 
-    }
+    return unsubscribed;
+  }, []);
 
-    function resetPassword(email) {
-        return auth.sendPasswordResetEmail(email)
-    }
+  const value = {
+    currentUser,
+    login,
+    signup,
+    logout,
+    resetPassword,
+  };
 
-    useEffect(() => {
-        const unsubscribed = auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-            setLoading(false)
-        })
-
-        return unsubscribed
-    }, [])
-    
-    const value = {
-        currentUser,
-        login,
-        signup,
-        logout,
-        resetPassword
-    }
-
-    return (
-        <AuthContext.Provider value={value}>
-            {/* if we are not loading, then render the children */}
-            {!loading && children}
-        </AuthContext.Provider>
-    )
+  return (
+    <AuthContext.Provider value={value}>
+      {/* if we are not loading, then render the children */}
+      {!loading && children}
+    </AuthContext.Provider>
+  );
 }
-
