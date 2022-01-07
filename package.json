@@ -21,6 +21,7 @@
     "flickity": "^2.2.2",
     "gsap": "^3.8.0",
     "gsap-trial": "^3.8.0",
+    "heroku": "^7.59.2",
     "http-proxy-middleware": "^2.0.1",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",
