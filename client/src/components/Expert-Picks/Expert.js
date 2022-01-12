@@ -152,6 +152,7 @@ export default function Expert() {
     getAllData();
     countPicks();
     getAllGames();
+    
   }, []);
 
   const label = useRef();
@@ -221,16 +222,7 @@ export default function Expert() {
                     <h6 className="no-team-logo-picks"> - </h6>
                     <h6 className="no-team-logo-picks"> - </h6>
                     <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
-                    <h6 className="no-team-logo-picks"> - </h6>
+                    
                   </div>
                   {signedInPicks?.picks?.map((item, index) => {
                     if (index !== 0) {
@@ -275,16 +267,7 @@ export default function Expert() {
                           <h6 className="no-team-logo-picks"> - </h6>
                           <h6 className="no-team-logo-picks"> - </h6>
                           <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
-                          <h6 className="no-team-logo-picks"> - </h6>
+                    
                         </div>
 
                         {item.picks?.map((item, index) => {

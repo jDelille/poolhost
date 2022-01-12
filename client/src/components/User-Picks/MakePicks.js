@@ -111,9 +111,9 @@ export default function MakePicks({
 
   console.log(counter);
 
-  return counter < 16 ? (
+  return counter < 6 ? (
     <div className="picks-container">
-      {loading && counter < 16 && testing.length < 17 ? (
+      {loading && counter < 6 && testing.length < 17 ? (
         filteredGames?.map((item) => {
           return (
             <>
