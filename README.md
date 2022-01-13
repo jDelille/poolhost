@@ -11,7 +11,7 @@ Frontend
 * Javascript
 * React
 * Axios
-* 
+
 Backend
 
 * Node.js
